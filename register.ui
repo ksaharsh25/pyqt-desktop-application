@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>690</height>
+    <width>498</width>
+    <height>549</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QWidget" name="bgwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>-1</y>
+     <x>-10</x>
+     <y>0</y>
      <width>561</width>
      <height>671</height>
     </rect>
@@ -31,7 +31,7 @@ background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379,
      <rect>
       <x>100</x>
       <y>40</y>
-      <width>251</width>
+      <width>291</width>
       <height>71</height>
      </rect>
     </property>
@@ -39,30 +39,14 @@ background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379,
      <string notr="true">font: 36pt &quot;MS Shell Dlg 2&quot;; color:rgb(255, 255, 255)</string>
     </property>
     <property name="text">
-     <string>Login page</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>110</y>
-      <width>361</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;color:rgb(255, 255, 255)</string>
-    </property>
-    <property name="text">
-     <string>Sign in to your existing account</string>
+     <string>Register Page</string>
     </property>
    </widget>
    <widget class="QPushButton" name="loginbutton">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>470</y>
+      <y>440</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -73,14 +57,14 @@ background-color: rgb(170, 255, 255);
 font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Login</string>
+     <string>Sign Up</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="email">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>300</y>
+      <y>170</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -94,7 +78,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>270</y>
+      <y>140</y>
       <width>91</width>
       <height>20</height>
      </rect>
@@ -135,7 +119,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>390</y>
+      <y>270</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -149,7 +133,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>360</y>
+      <y>240</y>
       <width>91</width>
       <height>20</height>
      </rect>
@@ -170,48 +154,12 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>Password</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="loginbutton_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>540</y>
-      <width>341</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius:20px;
-background-color: rgb(170, 255, 255);
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Delete</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="loginbutton_3">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>600</y>
-      <width>341</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius:20px;
-background-color: rgb(170, 255, 255);
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Update</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>170</y>
-      <width>91</width>
+      <y>340</y>
+      <width>111</width>
       <height>20</height>
      </rect>
     </property>
@@ -228,14 +176,14 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string> Id</string>
+     <string>Confirm Password</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="email_2">
+   <widget class="QLineEdit" name="Password_2">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>200</y>
+      <y>370</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -243,9 +191,6 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="styleSheet">
      <string notr="true">background-color:rgba(0,0,0,0);
 font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="placeholderText">
-     <string/>
     </property>
    </widget>
   </widget>
