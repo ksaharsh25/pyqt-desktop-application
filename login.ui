@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>690</height>
+    <width>551</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QWidget" name="bgwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>-1</y>
+     <x>-10</x>
+     <y>0</y>
      <width>561</width>
      <height>671</height>
     </rect>
@@ -62,7 +62,7 @@ background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379,
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>470</y>
+      <y>390</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -80,7 +80,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>300</y>
+      <y>200</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -94,7 +94,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>270</y>
+      <y>170</y>
       <width>91</width>
       <height>20</height>
      </rect>
@@ -135,7 +135,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>390</y>
+      <y>300</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -149,7 +149,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>360</y>
+      <y>270</y>
       <width>91</width>
       <height>20</height>
      </rect>
@@ -168,84 +168,6 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
      <string>Password</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="loginbutton_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>540</y>
-      <width>341</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius:20px;
-background-color: rgb(170, 255, 255);
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Delete</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="loginbutton_3">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>600</y>
-      <width>341</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius:20px;
-background-color: rgb(170, 255, 255);
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Update</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>170</y>
-      <width>91</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>MS Shell Dlg 2</family>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string> Id</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="email_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>200</y>
-      <width>341</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgba(0,0,0,0);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="placeholderText">
-     <string/>
     </property>
    </widget>
   </widget>
