@@ -10,8 +10,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import mysql.connector as mc
-from PyQt5.QtWidgets import QWidget,QVBoxLayout,QLineEdit,QPushButton
-# from user import Ui_MainWindow
+
+
+from PyQt5.QtWidgets import QWidget,QVBoxLayout,QLineEdit,QPushButton,QDialog
+
 class SecondWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -76,14 +78,13 @@ class SecondWindow(QWidget):
               
     def displayInfo(self):
         self.show()
- 
 
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(551, 560)
         self.bgwidget = QtWidgets.QWidget(Form)
-        self.bgwidget.setGeometry(QtCore.QRect(-10, 0, 561, 671))
+        self.bgwidget.setGeometry(QtCore.QRect(0, -40, 561, 671))
         self.bgwidget.setStyleSheet("QWidget#bgwidget{\n"
 "background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379, y2:0.977, stop:0 rgba(209, 107, 165, 255), stop:1 rgba(255, 255, 255, 255));}")
         self.bgwidget.setObjectName("bgwidget")
@@ -138,12 +139,34 @@ class Ui_Form(object):
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("font: 10pt \"MS Shell Dlg 2\";")
         self.label_4.setObjectName("label_4")
+        self.loginbutton_2 = QtWidgets.QPushButton(self.bgwidget)
+        self.loginbutton_2.setGeometry(QtCore.QRect(110, 490, 341, 51))
+        self.loginbutton_2.setStyleSheet("border-radius:20px;\n"
+"background-color: rgb(170, 255, 255);\n"
+"font: 14pt \"MS Shell Dlg 2\";")
+        self.loginbutton_2.setObjectName("loginbutton_2")
+        self.label_5 = QtWidgets.QLabel(self.bgwidget)
+        self.label_5.setGeometry(QtCore.QRect(150, 460, 241, 20))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("color: rgb(0, 0, 255);")
+        self.label_5.setObjectName("label_5")
         self.loginbutton.clicked.connect(self.insert_data)
         self.loginbutton.clicked.connect(self.passingInformation)
-        self.secondWindow = SecondWindow()  
+        self.loginbutton_2.clicked.connect(self.opensignup)
+        self.secondWindow = SecondWindow() 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+
+    def opensignup(self):
+        from reg import Ui_MainWindow
+        self.regwindow=QtWidgets.QMainWindow()
+        self.ui=Ui_MainWindow()
+        self.ui.setupUi(self.regwindow)
+        self.regwindow.show()
+  
     def insert_data(self):
 
         db=mc.connect(
@@ -165,11 +188,14 @@ class Ui_Form(object):
                 print("user found")
         else:            
                 print("user not found")
+
     
+             
     def passingInformation(self):
         self.secondWindow.input1.setText(self.email.text())
         self.secondWindow.input2.setText(self.Password.text())
-        self.secondWindow.displayInfo() 
+        self.secondWindow.displayInfo()
+ 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
@@ -178,7 +204,10 @@ class Ui_Form(object):
         self.loginbutton.setText(_translate("Form", "Login"))
         self.label_3.setText(_translate("Form", "Email Id"))
         self.label_4.setText(_translate("Form", "Password"))
+        self.loginbutton_2.setText(_translate("Form", "Signup"))
+        self.label_5.setText(_translate("Form", "Don\'t have account. Register here"))
 
+       
 if __name__ == "__main__":
         import sys
         app=QtWidgets.QApplication(sys.argv)
@@ -186,4 +215,5 @@ if __name__ == "__main__":
         ui = Ui_Form()
         ui.setupUi(Form)
         Form.show()
-        sys.exit(app.exec_())   
+        sys.exit(app.exec_())  
+   

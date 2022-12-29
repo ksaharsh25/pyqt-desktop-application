@@ -1,11 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from log import Ui_Form
+
 import mysql.connector as mc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(500, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.bgwidget = QtWidgets.QWidget(self.centralwidget)
@@ -90,6 +90,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def openlogin(self):
+        from log import Ui_Form
         self.window=QtWidgets.QMainWindow()
         self.ui=Ui_Form()
         self.ui.setupUi(self.window)
