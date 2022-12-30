@@ -9,24 +9,24 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from log import *
-from reg import *
+
+
 
 class Ui_Form1(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(505, 530)
+        Form.resize(712, 530)
         self.bgwidget = QtWidgets.QWidget(Form)
-        self.bgwidget.setGeometry(QtCore.QRect(-40, -10, 561, 671))
+        self.bgwidget.setGeometry(QtCore.QRect(-10, -10, 721, 671))
         self.bgwidget.setStyleSheet("QWidget#bgwidget{\n"
 "background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379, y2:0.977, stop:0 rgba(209, 107, 165, 255), stop:1 rgba(255, 255, 255, 255));}")
         self.bgwidget.setObjectName("bgwidget")
         self.label = QtWidgets.QLabel(self.bgwidget)
-        self.label.setGeometry(QtCore.QRect(100, 40, 321, 71))
+        self.label.setGeometry(QtCore.QRect(190, 40, 321, 71))
         self.label.setStyleSheet("font: 36pt \"MS Shell Dlg 2\"; color:rgb(255, 255, 255)")
         self.label.setObjectName("label")
         self.loginbutton = QtWidgets.QPushButton(self.bgwidget)
-        self.loginbutton.setGeometry(QtCore.QRect(70, 310, 171, 51))
+        self.loginbutton.setGeometry(QtCore.QRect(110, 300, 171, 51))
         self.loginbutton.setStyleSheet("border-radius:20px;\n"
 "background-color: rgb(170, 255, 255);\n"
 "font: 14pt \"MS Shell Dlg 2\";")
@@ -37,34 +37,34 @@ class Ui_Form1(object):
         self.error.setText("")
         self.error.setObjectName("error")
         self.loginbutton_2 = QtWidgets.QPushButton(self.bgwidget)
-        self.loginbutton_2.setGeometry(QtCore.QRect(320, 310, 171, 51))
+        self.loginbutton_2.setGeometry(QtCore.QRect(440, 300, 171, 51))
         self.loginbutton_2.setStyleSheet("border-radius:20px;\n"
 "background-color: rgb(170, 255, 255);\n"
 "font: 14pt \"MS Shell Dlg 2\";")
         self.loginbutton_2.setObjectName("loginbutton_2")
         self.label_2 = QtWidgets.QLabel(self.bgwidget)
-        self.label_2.setGeometry(QtCore.QRect(40, 150, 221, 91))
+        self.label_2.setGeometry(QtCore.QRect(80, 160, 221, 91))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.bgwidget)
-        self.label_3.setGeometry(QtCore.QRect(280, 120, 251, 141))
+        self.label_3.setGeometry(QtCore.QRect(420, 130, 251, 141))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.label_3.setFont(font)
         self.label_3.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.bgwidget)
-        self.label_4.setGeometry(QtCore.QRect(110, 220, 81, 31))
+        self.label_4.setGeometry(QtCore.QRect(140, 230, 81, 31))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.bgwidget)
-        self.label_5.setGeometry(QtCore.QRect(290, 210, 201, 31))
+        self.label_5.setGeometry(QtCore.QRect(430, 230, 201, 31))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.label_5.setFont(font)
@@ -74,17 +74,20 @@ class Ui_Form1(object):
         self.loginbutton_2.clicked.connect(self.login)
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+    
     def signup(self):
+        from register import Ui_MainWindow
         self.signupwindow=QtWidgets.QMainWindow()
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self.signupwindow)
         self.signupwindow.show()
 
     def login(self):
+        from log import Ui_Form
         self.loginwindow=QtWidgets.QMainWindow()
         self.ui=Ui_Form()
         self.ui.setupUi(self.loginwindow)
-        self.loginwindow.show()       
+        self.loginwindow.show()   
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))

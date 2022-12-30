@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>505</width>
+    <width>712</width>
     <height>530</height>
    </rect>
   </property>
@@ -16,9 +16,9 @@
   <widget class="QWidget" name="bgwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>-40</x>
+     <x>-10</x>
      <y>-10</y>
-     <width>561</width>
+     <width>721</width>
      <height>671</height>
     </rect>
    </property>
@@ -29,7 +29,7 @@ background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379,
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>190</x>
       <y>40</y>
       <width>321</width>
       <height>71</height>
@@ -45,8 +45,8 @@ background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379,
    <widget class="QPushButton" name="loginbutton">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>310</y>
+      <x>110</x>
+      <y>300</y>
       <width>171</width>
       <height>51</height>
      </rect>
@@ -79,8 +79,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QPushButton" name="loginbutton_2">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>310</y>
+      <x>440</x>
+      <y>300</y>
       <width>171</width>
       <height>51</height>
      </rect>
@@ -97,8 +97,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>150</y>
+      <x>80</x>
+      <y>160</y>
       <width>221</width>
       <height>91</height>
      </rect>
@@ -118,8 +118,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>120</y>
+      <x>420</x>
+      <y>130</y>
       <width>251</width>
       <height>141</height>
      </rect>
@@ -139,8 +139,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>220</y>
+      <x>140</x>
+      <y>230</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -160,8 +160,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>210</y>
+      <x>430</x>
+      <y>230</y>
       <width>201</width>
       <height>31</height>
      </rect>

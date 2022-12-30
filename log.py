@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QLabel
+
 import mysql.connector as mc
-
-
 from PyQt5.QtWidgets import QWidget,QVBoxLayout,QLineEdit,QPushButton,QDialog
 
 class SecondWindow(QWidget):
@@ -19,6 +19,9 @@ class SecondWindow(QWidget):
         super().__init__()
         self.setWindowTitle('second window')
         self.setFixedWidth(500)
+        self.setFixedHeight(400)
+        self.label = QLabel('Welcome', self)
+        
         
         mainLayout = QVBoxLayout()
 
@@ -156,12 +159,13 @@ class Ui_Form(object):
         self.loginbutton.clicked.connect(self.passingInformation)
         self.loginbutton_2.clicked.connect(self.opensignup)
         self.secondWindow = SecondWindow() 
+      
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
 
     def opensignup(self):
-        from reg import Ui_MainWindow
+        from register import Ui_MainWindow
         self.regwindow=QtWidgets.QMainWindow()
         self.ui=Ui_MainWindow()
         self.ui.setupUi(self.regwindow)
@@ -183,14 +187,17 @@ class Ui_Form(object):
         value=(email,Password)
         mycursor.execute(query,value)
         saharsh= mycursor.fetchall()
-      
+        
         if (len(saharsh))>0:
                 print("user found")
-        else:            
-                print("user not found")
+        # elif email[-10: ] != '@gmail.com': 
 
-    
-             
+        #         email=input('Enter valid email')
+                  
+        else:
+                print("user not found")
+                       
+
     def passingInformation(self):
         self.secondWindow.input1.setText(self.email.text())
         self.secondWindow.input2.setText(self.Password.text())
