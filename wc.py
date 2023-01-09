@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 
-class Ui_Form1(object):
+class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(712, 530)
@@ -78,16 +78,16 @@ class Ui_Form1(object):
         self.loginbutton_2.clicked.connect(Form.close)
     
     def signup(self):
-        from register import Ui_MainWindow
+        from register import Ui_Form
         self.signupwindow=QtWidgets.QMainWindow()
-        self.ui=Ui_MainWindow()
-        self.ui.setupUi(self.signupwindow)
+        self.ui1=Ui_Form()
+        self.ui1.setupUi(self.signupwindow)
         self.signupwindow.show()
 
     def login(self):
-        from log import Ui_Form
+        from log import Ui_Form13
         self.loginwindow=QtWidgets.QMainWindow()
-        self.ui=Ui_Form()
+        self.ui=Ui_Form13()
         self.ui.setupUi(self.loginwindow)
         self.loginwindow.show()   
     def retranslateUi(self, Form):
@@ -104,7 +104,7 @@ if __name__ == "__main__":
         import sys
         app=QtWidgets.QApplication(sys.argv)
         Form=QtWidgets.QMainWindow()
-        ui = Ui_Form1()
+        ui = Ui_Form()
         ui.setupUi(Form)
         Form.show()
         sys.exit(app.exec_())

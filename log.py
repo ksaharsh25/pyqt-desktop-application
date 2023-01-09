@@ -82,7 +82,7 @@ class SecondWindow(QWidget):
     def displayInfo(self):
         self.show()
 
-class Ui_Form(object):
+class Ui_Form13(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(551, 560)
@@ -168,9 +168,9 @@ class Ui_Form(object):
         self.email.setValidator(i) 
         self.Password.setEchoMode(QtWidgets.QLineEdit.Password)
     def opensignup(self):
-        from register import Ui_MainWindow
+        from register import Ui_Form1
         self.regwindow=QtWidgets.QMainWindow()
-        self.ui=Ui_MainWindow()
+        self.ui=Ui_Form1()
         self.ui.setupUi(self.regwindow)
         self.regwindow.show()
   
@@ -192,6 +192,18 @@ class Ui_Form(object):
         mycursor.execute(query,value)
         saharsh= mycursor.fetchall()
         
+        if (len(email) and len(Password) )==0:
+
+                self.email.setPlaceholderText('Please enter Email Id')
+                self.Password.setPlaceholderText('Please enter Password')
+        elif len(email)==0:
+                self.email.setPlaceholderText('Please enter email id')
+
+        elif len(Password)==0:
+                self.Password.setPlaceholderText('Please enter Password')   
+        else:
+                      
+                Form.close()                     
         if (len(saharsh))>0:
                 print("user found")
         
@@ -224,7 +236,7 @@ if __name__ == "__main__":
         import sys
         app=QtWidgets.QApplication(sys.argv)
         Form=QtWidgets.QMainWindow()
-        ui = Ui_Form()
+        ui = Ui_Form13()
         ui.setupUi(Form)
         Form.show()
         sys.exit(app.exec_())  
