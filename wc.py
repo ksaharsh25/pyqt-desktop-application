@@ -74,6 +74,8 @@ class Ui_Form1(object):
         self.loginbutton_2.clicked.connect(self.login)
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.loginbutton.clicked.connect(Form.close)
+        self.loginbutton_2.clicked.connect(Form.close)
     
     def signup(self):
         from register import Ui_MainWindow

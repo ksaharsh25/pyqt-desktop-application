@@ -10,10 +10,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QLabel
-
+from PyQt5.QtCore import QRegExp, QRegularExpression
 import mysql.connector as mc
-from PyQt5.QtWidgets import QWidget,QVBoxLayout,QLineEdit,QPushButton,QDialog
-
+from PyQt5.QtWidgets import QWidget,QVBoxLayout,QLineEdit,QPushButton,QDialog,QMessageBox
+from PyQt5.QtGui import QValidator,QRegExpValidator
 class SecondWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -159,11 +159,14 @@ class Ui_Form(object):
         self.loginbutton.clicked.connect(self.passingInformation)
         self.loginbutton_2.clicked.connect(self.opensignup)
         self.secondWindow = SecondWindow() 
-      
+        self.loginbutton.clicked.connect(Form.close)
+        self.loginbutton_2.clicked.connect(Form.close)
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
-
-
+        reg_e = QRegExp("[a-z 0-9]+[\._]?[a-z 0-9]+[@]\w+[.]\w{2,3}$")
+        i = QRegExpValidator(reg_e, self.email)
+        self.email.setValidator(i) 
+        self.Password.setEchoMode(QtWidgets.QLineEdit.Password)
     def opensignup(self):
         from register import Ui_MainWindow
         self.regwindow=QtWidgets.QMainWindow()
@@ -172,6 +175,7 @@ class Ui_Form(object):
         self.regwindow.show()
   
     def insert_data(self):
+    
 
         db=mc.connect(
                 host="localhost",
@@ -190,14 +194,15 @@ class Ui_Form(object):
         
         if (len(saharsh))>0:
                 print("user found")
-        # elif email[-10: ] != '@gmail.com': 
-
-        #         email=input('Enter valid email')
-                  
+        
+                
         else:
                 print("user not found")
-                       
-
+                message_box=QMessageBox()
+                message_box.warning(None,"Error","Input invalid") 
+                # print("user not found")
+        
+                              
     def passingInformation(self):
         self.secondWindow.input1.setText(self.email.text())
         self.secondWindow.input2.setText(self.Password.text())
