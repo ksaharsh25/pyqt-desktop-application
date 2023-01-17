@@ -58,24 +58,6 @@ background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379,
      <string>Sign in to your existing account</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="loginbutton">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>390</y>
-      <width>341</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius:20px;
-background-color: rgb(170, 255, 255);
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Login</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="email">
     <property name="geometry">
      <rect>
@@ -207,6 +189,45 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
      <string>Don't have account. Register here</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="no_user">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>150</y>
+      <width>271</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loginbutton">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>400</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:20px;
+background-color: rgb(170, 255, 255);
+font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>LogIN</string>
     </property>
    </widget>
   </widget>

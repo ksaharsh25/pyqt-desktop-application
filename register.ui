@@ -45,8 +45,8 @@ background-color:qlineargradient(spread:pad, x1:0.091, y1:0.101636, x2:0.991379,
    <widget class="QPushButton" name="loginbutton_3">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>510</y>
+      <x>50</x>
+      <y>520</y>
       <width>341</width>
       <height>51</height>
      </rect>
@@ -407,6 +407,45 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       <width>91</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loginbutton_4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>520</y>
+      <width>341</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:20px;
+background-color: rgb(170, 255, 255);
+font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Login</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="error_text">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>50</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 0, 0);</string>

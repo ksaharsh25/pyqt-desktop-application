@@ -9,13 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QLabel
+
+# from PyQt5.QtWidgets import QLabel
 from PyQt5.QtCore import QRegExp, QRegularExpression,pyqtSlot
 import mysql.connector as mc
-from PyQt5.QtWidgets import QWidget,QVBoxLayout,QLineEdit,QPushButton,QDialog,QMessageBox
+from PyQt5.QtWidgets import QWidget,QVBoxLayout,QLineEdit,QPushButton,QDialog,QMessageBox,QApplication
 from PyQt5.QtGui import QValidator,QRegExpValidator  
+
 
 
 class Ui_Form(object):
@@ -32,7 +32,7 @@ class Ui_Form(object):
         self.label_6.setStyleSheet("font: 36pt \"MS Shell Dlg 2\"; color:rgb(255, 255, 255)")
         self.label_6.setObjectName("label_6")
         self.loginbutton_3 = QtWidgets.QPushButton(self.bgwidget)
-        self.loginbutton_3.setGeometry(QtCore.QRect(220, 510, 341, 51))
+        self.loginbutton_3.setGeometry(QtCore.QRect(50, 520, 341, 51))
         self.loginbutton_3.setStyleSheet("border-radius:20px;\n"
 "background-color: rgb(170, 255, 255);\n"
 "font: 14pt \"MS Shell Dlg 2\";")
@@ -167,6 +167,20 @@ class Ui_Form(object):
         self.label_16.setStyleSheet("color: rgb(255, 0, 0);")
         self.label_16.setText("")
         self.label_16.setObjectName("label_16")
+        self.loginbutton_4 = QtWidgets.QPushButton(self.bgwidget)
+        self.loginbutton_4.setGeometry(QtCore.QRect(390, 520, 341, 51))
+        self.loginbutton_4.setStyleSheet("border-radius:20px;\n"
+"background-color: rgb(170, 255, 255);\n"
+"font: 14pt \"MS Shell Dlg 2\";")
+        self.loginbutton_4.setObjectName("loginbutton_4")
+        self.error_text = QtWidgets.QLabel(self.bgwidget)
+        self.error_text.setGeometry(QtCore.QRect(560, 50, 161, 21))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.error_text.setFont(font)
+        self.error_text.setStyleSheet("color: rgb(255, 0, 0);")
+        self.error_text.setText("")
+        self.error_text.setObjectName("error_text")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -176,7 +190,7 @@ class Ui_Form(object):
         input_validator = QRegExpValidator(reg_ex, self.email_4)
         self.email_4.setValidator(input_validator)
                     
-        reg_e = QRegExp("[a-z 0-9]+[\._]?[a-z 0-9]+[@]\w+[.]\w{2,3}$")
+        reg_e = QRegExp("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
         i = QRegExpValidator(reg_e, self.email_2)
         self.email_2.setValidator(i)      
 
@@ -186,7 +200,15 @@ class Ui_Form(object):
         self.email_3.setValidator(input)
         self.Password_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.Password_3.setEchoMode(QtWidgets.QLineEdit.Password)
-     
+        self.loginbutton_4.clicked.connect(Form.close)
+        self.loginbutton_4.clicked.connect(self.openlogin)
+        # Form.setVisible(True)
+    def openlogin(self):
+        from main import Window
+        self.logwin=QtWidgets.QMainWindow()
+        self.ui=Window()
+        # self.ui.setupUi(self.logwin)
+        # self.logwin.show()       
     def insert(self):
         
         try:
@@ -204,9 +226,12 @@ class Ui_Form(object):
                 Password_2=self.Password_3.text()
                 # self.email_error_message = 'The value should be an email.'
                 # self.email_regex = QRegularExpression
-                query="INSERT INTO login_db (name,mobile,email,Password,Password_2) VALUES (%s,%s,%s,%s,%s)"
+                
+                query="INSERT INTO login_db (name,mobile,email,Password,Password_2) VALUES (%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE name = VALUES(name),email=VALUES(email),mobile = VALUES(mobile),Password=VALUES(Password),Password_2=VALUES(Password_2) "
+                
                 value=(name,mobile,email,Password,Password_2)
-                mycursor.execute(query,value)
+                mycursor.execute(query,value)  
+                result=mycursor.fetchone()
                 # user=mycursor.fetchall()
                 db.commit()
                
@@ -218,36 +243,35 @@ class Ui_Form(object):
                         self.Password_2.setPlaceholderText("Please enter Password")
                         self.Password_3.setPlaceholderText("Please enter Confirm Password")
                         
-                        
                 elif len(name)==0:
                         self.email_3.setPlaceholderText('Please Enter name')
-                        # self.loginbutton.clicked.connect(Form.close) 
-                        
-                       
+                               
                 elif len(mobile)==0:
                         self.email_4.setPlaceholderText('Please Mobile number')
-                        
+                        # self.loginbutton_3.clicked.connect(Form.close)
                 elif len(email)==0:
                         self.email_2.setPlaceholderText('Please enter email id')
-
-                elif len(Password)==0:
-                        self.Password_2.setPlaceholderText('Please enter Password') 
-                elif len(Password_2)==0:
-                        # self.loginbutton.clicked.connect(Form.close)
-                        self.Password_3.setPlaceholderText('Please enter Confirm Password')  
                         
+                elif len(Password)==0:
+                        self.Password_2.setPlaceholderText('Please enter Password')
+                         
+                elif len(Password_2)==0:
+                        self.Password_3.setPlaceholderText('Please enter Confirm Password')
+
+                elif Password!=Password_2:
+                        self.error_text.setText("Password do not match")
+                # elif email==email:
+                #         QMessageBox.about(None,"Error","Email already exist") 
+                elif result:
+                        QMessageBox.about(None,"Error","User already exist")
+                   
                 else:
-                        from log import Ui_Form13
-                        self.window=QtWidgets.QMainWindow()
-                        self.ui=Ui_Form13()
-                        self.ui.setupUi(self.window)
-                        self.window.show() 
-                       
-                        Form.close()           
-                      
-                           
+                        self.error_text.hide()
+                        QMessageBox.about(None,"Success","Successfully registered")
+                        
         except mc.Error as e:
-                print("Error")   
+                print("Error")
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
@@ -258,12 +282,13 @@ class Ui_Form(object):
         self.label_9.setText(_translate("Form", "Confirm Password"))
         self.label_10.setText(_translate("Form", "Name"))
         self.label_11.setText(_translate("Form", "Mobile number"))
+        self.loginbutton_4.setText(_translate("Form", "Login"))
 if __name__ == "__main__":
-        
+
         import sys
         app=QtWidgets.QApplication(sys.argv)
         Form=QtWidgets.QMainWindow()
         ui1= Ui_Form()
         ui1.setupUi(Form)
         Form.show()
-        sys.exit(app.exec_()) 
+        sys.exit(app.exec_())
